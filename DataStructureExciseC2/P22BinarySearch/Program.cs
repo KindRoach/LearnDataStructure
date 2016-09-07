@@ -11,7 +11,7 @@ namespace P22BinarySearch
         // 二分查找
         static void Main(string[] args)
         {
-            int target = 0;
+            int target = Int32.MaxValue;
             int[] numbers = GetNumbers(100000000, out target);
             DateTime before = new DateTime();
             DateTime after = new DateTime();
@@ -43,10 +43,10 @@ namespace P22BinarySearch
             Random random = new Random();
             for (int i = 0; i < size; i++)
             {
-                numbers[i] = random.Next();
+                numbers[i] = random.Next(Int32.MaxValue - 1);
             }
             target = random.Next();
-            numbers[random.Next(size)] = target;
+            //numbers[random.Next(size)] = target;
             Array.Sort(numbers);
             return numbers;
         }
@@ -61,7 +61,7 @@ namespace P22BinarySearch
                 mid = left + (right - left) / 2;
                 if (target < numbers[mid])
                 {
-                    right = mid;
+                    right = mid - 1;
                 }
                 else if (target == numbers[mid])
                 {
