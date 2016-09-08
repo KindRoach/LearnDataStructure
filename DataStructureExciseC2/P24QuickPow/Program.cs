@@ -9,7 +9,7 @@ namespace P24QuickPow
     // 快速幂
     class Program
     {
-        const int mod = 10007;
+        const int mod = 100007;
 
         static void Main(string[] args)
         {
@@ -27,8 +27,12 @@ namespace P24QuickPow
 
             Console.WriteLine();
 
+
+            exp = 4;
+            x = 5;
             before = DateTime.Now;
-            Console.WriteLine(QuickPow(x, exp));
+            Console.WriteLine($"{x}---{exp}");
+            Console.WriteLine(QuickPow_Withoutecursion(x, exp));
             after = DateTime.Now;
             Console.WriteLine(after - before);
         }
@@ -64,6 +68,34 @@ namespace P24QuickPow
                     return (QuickPow((x * x) % mod, (exp - 1) / 2) * x) % mod;
                 }
             }
+        }
+
+        static int QuickPow_Withoutecursion(int x, int exp)
+        {
+            if (exp == 0)
+            {
+                return 1;
+            }
+
+            if (exp == 1)
+            {
+                return x;
+            }
+
+            int result = x;
+            int adjust = 1;
+            if (exp % 2 == 1)
+            {
+                adjust = x;
+                exp = exp - 1;
+            }
+            while (exp > 1)
+            {
+                result = result * result;
+                exp = exp / 2;
+            }
+            result = result * adjust;
+            return result;
         }
     }
 }
