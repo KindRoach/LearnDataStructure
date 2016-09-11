@@ -46,7 +46,7 @@ namespace P22BinarySearch
                 numbers[i] = random.Next(Int32.MaxValue - 1);
             }
             target = random.Next();
-            //numbers[random.Next(size)] = target;
+            numbers[random.Next(size)] = target;
             Array.Sort(numbers);
             return numbers;
         }
@@ -63,13 +63,13 @@ namespace P22BinarySearch
                 {
                     right = mid - 1;
                 }
-                else if (target == numbers[mid])
+                else if (target > numbers[mid])
                 {
-                    return mid;
+                    left = mid + 1;
                 }
                 else
                 {
-                    left = mid + 1;
+                    return mid;
                 }
             }
             return -1;
@@ -89,30 +89,23 @@ namespace P22BinarySearch
 
         static int FindIndexOf_logn_recursion(int target, int[] numbers, int left, int right)
         {
-            if (left == right)
+            if (left > right)
             {
-                if (target == numbers[left])
-                {
-                    return left;
-                }
-                else
-                {
-                    return -1;
-                }
+                return -1;
             }
 
             int mid = left + (right - left) / 2;
-            if (target == numbers[mid])
+            if (target < numbers[mid])
             {
-                return mid;
+                return FindIndexOf_logn_recursion(target, numbers, left, mid - 1);
             }
-            else if (target < numbers[mid])
+            else if (target > numbers[mid])
             {
-                return FindIndexOf_logn_recursion(target, numbers, left, mid);
+                return FindIndexOf_logn_recursion(target, numbers, mid + 1, right);
             }
             else
             {
-                return FindIndexOf_logn_recursion(target, numbers, mid + 1, right);
+                return mid;
             }
         }
     }
