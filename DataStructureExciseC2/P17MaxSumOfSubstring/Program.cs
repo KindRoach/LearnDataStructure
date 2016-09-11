@@ -11,7 +11,7 @@ namespace P17MaxSumOfSubstring
         // 找出n个数组成的序列中，和最大的子序列的和（P13）
         static void Main(string[] args)
         {
-            int[] numbers = GetNumbers(1000000);
+            int[] numbers = GetNumbers(10000000);
             DateTime before = new DateTime();
             DateTime after = new DateTime();
 
