@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P62T3.3SwapListNode", "P62T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P62T3.4ListAndOr", "P62T3.4ListAndOr\P62T3.4ListAndOr.csproj", "{CE3D72B6-22E1-4F2E-9D64-D40DEE31F61F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P62T3.7.bPolynomialMultiplication", "P62T3.7.bPolynomialMultiplication\P62T3.7.bPolynomialMultiplication.csproj", "{4B80D8E8-7E80-4DCB-8AE2-A6DAEE82FE03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CE3D72B6-22E1-4F2E-9D64-D40DEE31F61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3D72B6-22E1-4F2E-9D64-D40DEE31F61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3D72B6-22E1-4F2E-9D64-D40DEE31F61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B80D8E8-7E80-4DCB-8AE2-A6DAEE82FE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B80D8E8-7E80-4DCB-8AE2-A6DAEE82FE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B80D8E8-7E80-4DCB-8AE2-A6DAEE82FE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B80D8E8-7E80-4DCB-8AE2-A6DAEE82FE03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
