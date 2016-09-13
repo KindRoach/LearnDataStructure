@@ -11,46 +11,85 @@ namespace P64T3._18MatchParentheses
     {
         static void Main(string[] args)
         {
-
+            var input = "{begin end}";
+            Console.WriteLine(IsMatch(input));
         }
 
-        static List<Parenthes> PopulateList()
+        static bool IsMatch(string input)
         {
-            var list = new List<Parenthes>();
-            list.Add(new Parenthes("(", ")"));
-            list.Add(new Parenthes("[", "]"));
-            list.Add(new Parenthes("{", "}"));
-            list.Add(new Parenthes("/*", "*/"));
-            list.Add(new Parenthes("begin", "end"));
-            return list;
+
+            var parenthes = new List<string>(10);
+            parenthes.Add("(");
+            parenthes.Add(")");
+            parenthes.Add("[");
+            parenthes.Add("]");
+            parenthes.Add("{");
+            parenthes.Add("}");
+            parenthes.Add("/*");
+            parenthes.Add("*/");
+            parenthes.Add("begin");
+            parenthes.Add("end");
+
+            var leftParenthes = new HashSet<string>();
+            leftParenthes.Add("(");
+            leftParenthes.Add("[");
+            leftParenthes.Add("{");
+            leftParenthes.Add("/*");
+            leftParenthes.Add("begin");
+
+            var match = new Dictionary<string, string>(5);
+            match.Add(")", "(");
+            match.Add("]", "[");
+            match.Add("}", "{");
+            match.Add("*/", "/*");
+            match.Add("end", "begin");
+
+            var locations = new List<Tuple<string, int>>();
+            foreach (var item in parenthes)
+            {
+                GetLocation(item, input, locations);
+            }
+
+            var order = locations.OrderBy(x => x.Item2).Select(x => x.Item1);
+
+            var stack = new Stack<string>();
+
+            foreach (var item in order)
+            {
+                if (leftParenthes.Contains(item))
+                {
+                    stack.Push(item);
+                }
+                else
+                {
+                    if (stack.Peek() == match[item])
+                    {
+                        stack.Pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            if (stack.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
-        static List<Parenthes> PopulateRight()
+        private static void GetLocation(
+            string target, string input, List<Tuple<string, int>> locations)
         {
-            var list = new List<Parenthes>();
-            list.Add(new Parenthes(")", "("));
-            list.Add(new Parenthes("]", "["));
-            list.Add(new Parenthes("}", "{"));
-            list.Add(new Parenthes("*/", "/*"));
-            list.Add(new Parenthes("end", "begin"));
-            return list;
-        }
-    }
-
-    class Parenthes
-    {
-        public string Value { get; set; }
-        public string Match { get; set; }
-
-        public Parenthes(string value, string match)
-        {
-            Value = value;
-            Match = match;
-        }
-
-        public override string ToString()
-        {
-            return Value;
+            int index = input.IndexOf(target);
+            while (index >= 0)
+            {
+                locations.Add(new Tuple<string, int>(target, index));
+                index = input.IndexOf(target, index + target.Length);
+            }
         }
     }
 }

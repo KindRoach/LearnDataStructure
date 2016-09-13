@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P63T3.16DeleteDuplicateItem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P64T3.18MatchParentheses", "P64T3.18MatchParentheses\P64T3.18MatchParentheses.csproj", "{867629B5-4393-4A16-B76A-6B51B89EBC5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P64T3.20EvaluateExpression", "P64T3.20EvaluateExpression\P64T3.20EvaluateExpression.csproj", "{C1122A53-E967-454A-90D0-E301AECE8DE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{867629B5-4393-4A16-B76A-6B51B89EBC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{867629B5-4393-4A16-B76A-6B51B89EBC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{867629B5-4393-4A16-B76A-6B51B89EBC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1122A53-E967-454A-90D0-E301AECE8DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1122A53-E967-454A-90D0-E301AECE8DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1122A53-E967-454A-90D0-E301AECE8DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1122A53-E967-454A-90D0-E301AECE8DE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
