@@ -101,7 +101,7 @@ namespace P73BinarySearchTree
             }
             else
             {
-                Root = new BSTNode<T>(element, Root);
+                Root = new BSTNode<T>(element, null);
             }
         }
 
