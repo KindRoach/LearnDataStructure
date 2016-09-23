@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P73BinarySearchTree", "P73B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P80AVLTree", "P80AVLTree\P80AVLTree.csproj", "{BE719435-5E90-430A-9196-CFBA2B112E34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.28CountBSTreeNode", "P104T4.28CountBSTreeNode\P104T4.28CountBSTreeNode.csproj", "{D98204E6-69C0-4D4A-A813-73D87EC97615}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BE719435-5E90-430A-9196-CFBA2B112E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE719435-5E90-430A-9196-CFBA2B112E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE719435-5E90-430A-9196-CFBA2B112E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
