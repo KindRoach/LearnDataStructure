@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P80AVLTree", "P80AVLTree\P8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.28CountBSTreeNode", "P104T4.28CountBSTreeNode\P104T4.28CountBSTreeNode.csproj", "{D98204E6-69C0-4D4A-A813-73D87EC97615}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.29MakeRandomTree", "P104T4.29MakeRandomTree\P104T4.29MakeRandomTree.csproj", "{CDE3AB31-B2CF-4B02-BED3-514E94713671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.30MakeAVLTree", "P104T4.30MakeAVLTree\P104T4.30MakeAVLTree.csproj", "{617402A4-1949-4ADB-988C-AD114FEFF1C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98204E6-69C0-4D4A-A813-73D87EC97615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE3AB31-B2CF-4B02-BED3-514E94713671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE3AB31-B2CF-4B02-BED3-514E94713671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE3AB31-B2CF-4B02-BED3-514E94713671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE3AB31-B2CF-4B02-BED3-514E94713671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

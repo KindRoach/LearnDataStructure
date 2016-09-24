@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace P104T4._28CountBSTreeNode
 {
+    // 统计一颗二叉树中：
+    // 1、节点的个数
+    // 2、叶的个数
+    // 3、满节点的个数
     class Program
     {
         static void Main(string[] args)
@@ -54,10 +58,16 @@ namespace P104T4._28CountBSTreeNode
 
         public static int AllFullNode(BSTNode<T> root)
         {
-            if (root == null || root.LeftChild == null || root.RightChild == null)
+            if (root == null)
             {
                 return 0;
             }
+
+            if (root.LeftChild == null || root.RightChild == null)
+            {
+                return AllFullNode(root.LeftChild) + AllFullNode(root.RightChild);
+            }
+
             return 1 + AllFullNode(root.LeftChild) + AllFullNode(root.RightChild);
         }
     }
