@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.29MakeRandomTree", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P104T4.30MakeAVLTree", "P104T4.30MakeAVLTree\P104T4.30MakeAVLTree.csproj", "{617402A4-1949-4ADB-988C-AD114FEFF1C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.32PrintRangeBST", "P105T4.32PrintRangeBST\P105T4.32PrintRangeBST.csproj", "{6D52B816-F195-4C39-BA8E-E4C8FF7C8484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.33DrawBST", "P105T4.33DrawBST\P105T4.33DrawBST.csproj", "{C94914D1-5B8B-4FAE-8EAE-065758F3DFD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{617402A4-1949-4ADB-988C-AD114FEFF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D52B816-F195-4C39-BA8E-E4C8FF7C8484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D52B816-F195-4C39-BA8E-E4C8FF7C8484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D52B816-F195-4C39-BA8E-E4C8FF7C8484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D52B816-F195-4C39-BA8E-E4C8FF7C8484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94914D1-5B8B-4FAE-8EAE-065758F3DFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94914D1-5B8B-4FAE-8EAE-065758F3DFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94914D1-5B8B-4FAE-8EAE-065758F3DFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94914D1-5B8B-4FAE-8EAE-065758F3DFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
