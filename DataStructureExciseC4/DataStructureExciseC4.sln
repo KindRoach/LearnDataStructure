@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.39ChildSiblingsTree"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.41IsSimilarBST", "P105T4.41IsSimilarBST\P105T4.41IsSimilarBST.csproj", "{C66556D7-6D51-4F37-A8A0-3AA5AAD2BEBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.42IsomorphicBST", "P105T4.42IsomorphicBST\P105T4.42IsomorphicBST.csproj", "{223A8C26-37B8-454C-AC54-4A741A6B41E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{C66556D7-6D51-4F37-A8A0-3AA5AAD2BEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C66556D7-6D51-4F37-A8A0-3AA5AAD2BEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C66556D7-6D51-4F37-A8A0-3AA5AAD2BEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223A8C26-37B8-454C-AC54-4A741A6B41E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223A8C26-37B8-454C-AC54-4A741A6B41E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223A8C26-37B8-454C-AC54-4A741A6B41E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223A8C26-37B8-454C-AC54-4A741A6B41E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
