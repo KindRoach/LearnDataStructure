@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeparateChainingHash", "SeparateChainingHash\SeparateChainingHash.csproj", "{4800A709-E680-46BE-A0D9-D3B13926AF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAdressingHash", "OpenAdressingHash\OpenAdressingHash.csproj", "{C1C510F4-C748-465D-A1F8-FD2303B8F128}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4800A709-E680-46BE-A0D9-D3B13926AF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4800A709-E680-46BE-A0D9-D3B13926AF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4800A709-E680-46BE-A0D9-D3B13926AF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4800A709-E680-46BE-A0D9-D3B13926AF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C510F4-C748-465D-A1F8-FD2303B8F128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C510F4-C748-465D-A1F8-FD2303B8F128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C510F4-C748-465D-A1F8-FD2303B8F128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C510F4-C748-465D-A1F8-FD2303B8F128}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
