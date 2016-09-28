@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SeparateChainingHash")]
+[assembly: AssemblyTitle("OpenAdressingHash")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SeparateChainingHash")]
+[assembly: AssemblyProduct("OpenAdressingHash")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("4800a709-e680-46be-a0d9-d3b13926af3d")]
+[assembly: Guid("6be0bfee-91c6-48fe-96a3-2b25cc3cebac")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

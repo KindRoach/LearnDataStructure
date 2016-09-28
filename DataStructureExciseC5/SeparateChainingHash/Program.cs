@@ -12,7 +12,7 @@ namespace SeparateChainingHash
         static void Main(string[] args)
         {
             int size = 6;
-            var hash = new HashTable<int>(size, x => x % HashTable<int>.NextPrime(size));
+            var hash = new HashTable<int>(size);
             hash.Insert(45);
             hash.Insert(3);
             hash.Insert(13);
@@ -48,7 +48,12 @@ namespace SeparateChainingHash
     {
         public int TableSize { get; set; }
         public List<HashHead<T>> Heads { get; set; }
-        public Func<T, int> Hash { get; }
+        public int Count { get; set; }
+
+        private int Hash(T key)
+        {
+            return key.GetHashCode() % TableSize;
+        }
 
         public static int NextPrime(int x)
         {
@@ -82,7 +87,7 @@ namespace SeparateChainingHash
             return true;
         }
 
-        public HashTable(int tableSize, Func<T, int> hashFunction)
+        public HashTable(int tableSize)
         {
             TableSize = NextPrime(tableSize);
             Heads = new List<SeparateChainingHash.HashHead<T>>(TableSize);
@@ -90,7 +95,7 @@ namespace SeparateChainingHash
             {
                 Heads.Add(new HashHead<T>());
             }
-            Hash = hashFunction;
+            Count = 0;
         }
 
         /// <summary>
@@ -145,12 +150,17 @@ namespace SeparateChainingHash
             if (pre != null)
             {
                 pre.Next = p.Next;
-                return;
             }
-
-            // p is the first node
-            int hashcode = Hash(p.Key);
-            Heads[hashcode].Next = p.Next;
+            else
+            {
+                int hashcode = Hash(p.Key);
+                Heads[hashcode].Next = p.Next;
+            }
+            Count--;
+            if (Count < TableSize * 3 / 4)
+            {
+                Rehash(false);
+            }
             return;
         }
 
@@ -171,8 +181,42 @@ namespace SeparateChainingHash
             var head = Heads[hashcode];
             node.Next = head.Next;
             head.Next = node;
+            Count++;
+            if (Count > TableSize * 2)
+            {
+                Rehash(true);
+            }
             return true;
         }
 
+        private void Rehash(bool IsBigger)
+        {
+            if (IsBigger)
+            {
+                TableSize = NextPrime(TableSize * 2);
+            }
+            else
+            {
+                TableSize = NextPrime(TableSize / 2);
+            }
+            var newList = new List<HashHead<T>>(TableSize);
+            for (int i = 0; i < TableSize; i++)
+            {
+                newList.Add(new HashHead<T>());
+            }
+            foreach (var item in Heads)
+            {
+                var p = item.Next;
+                while (p != null)
+                {
+                    var hashcode = Hash(p.Key);
+                    var node = new HashNode<T>(p.Key);
+                    node.Next = newList[hashcode].Next;
+                    newList[hashcode].Next = node;
+                    p = p.Next;
+                }
+            }
+            Heads = newList;
+        }
     }
 }
