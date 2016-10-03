@@ -4,36 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P134BinaryHeap
+namespace P159T6._9PrintSmallerThanX
 {
     class Program
     {
+        // 输出二叉堆中小于X的项
         static void Main(string[] args)
         {
-            int size = 10;
+            var nums = GetNums(0, 1000);
+            var heap = new BinaryHeap<int>(1001, int.MinValue, nums);
+            Console.WriteLine(heap.Elements[FindX(heap, 1, 209)]);
+        }
+
+        // 生成[lower,uper]的随机数组,不重复
+        static int[] GetNums(int lower, int uper)
+        {
+            var nums = new int[uper - lower + 1];
             var random = new Random();
-            var num = new int[size];
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < nums.Count(); i++)
             {
-                num[i] = random.Next();
+                nums[i] = i + lower;
             }
-            var heap = new BinaryHeap<int>(size, Int32.MinValue, num);
-
-            Array.Sort(num);
-
-            bool isRight = true;
-            foreach (var item in num)
+            for (int i = 1; i < nums.Count(); i++)
             {
-                if (item != heap.RemoveMin())
+                Swap(ref nums[i], ref nums[random.Next(0, i + 1)]);
+            }
+            return nums;
+        }
+
+        private static void Swap(ref int v1, ref int v2)
+        {
+            var temp = v1;
+            v1 = v2;
+            v2 = temp;
+        }
+
+        static void Print(BinaryHeap<int> heap, int p, int x)
+        {
+            if (p > heap.Count)
+            {
+                return;
+            }
+            if (heap.Elements[p] < x)
+            {
+                Console.Write($"{heap.Elements[p]} ");
+                Print(heap, p * 2, x);
+                Print(heap, p * 2 + 1, x);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        // return -1 for not found.
+        // if find more than one x,return the x in left subHeap first
+        static int FindX(BinaryHeap<int> heap, int p, int x)
+        {
+            if (p > heap.Count)
+            {
+                return -1;
+            }
+            if (heap.Elements[p] == x)
+            {
+                return p;
+            }
+            else if (heap.Elements[p] > x)
+            {
+                return -1;
+            }
+            else
+            {
+                int left = FindX(heap, p * 2, x);
+                if (left > 0)
                 {
-                    isRight = false;
+                    return left;
+                }
+                else
+                {
+                    return FindX(heap, p * 2 + 1, x);
                 }
             }
-            Console.WriteLine(isRight);
-            return;
-
         }
     }
+
 
     public class BinaryHeap<T>
         where T : IComparable
@@ -58,19 +112,16 @@ namespace P134BinaryHeap
             Elements[0] = sentinel;
         }
 
-        /// <summary>
-        /// 线性时间构造堆
-        /// </summary>
-        /// <param name="size"></param>
-        /// <param name="sentinel"></param>
-        /// <param name="array"></param>
-        public BinaryHeap(int size, T sentinel, T[] array) : this(size, sentinel)
+        public BinaryHeap(int size, T sentinel, T[] array)
         {
             if (size < array.Count())
             {
                 throw new Exception("heap size is smaller than array.");
             }
+            Size = size;
             Count = array.Count();
+            Elements = new T[Size + 1];
+            Elements[0] = sentinel;
             for (int i = 1; i < Count + 1; i++)
             {
                 Elements[i] = array[i - 1];

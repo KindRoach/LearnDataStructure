@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P143FindKth", "P143FindKth\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P145LeftHeap", "P145LeftHeap\P145LeftHeap.csproj", "{DCA3BAFB-B0D2-4CF8-B0F6-1B05E40E959B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P159T6.9PrintSmallerThanX", "P159T6.9PrintSmallerThanX\P159T6.9PrintSmallerThanX.csproj", "{385FEEAC-15A2-43FB-9D6F-CBE231C2E174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P159T6.11BuildBinaryHeap", "P159T6.11BuildBinaryHeap\P159T6.11BuildBinaryHeap.csproj", "{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{DCA3BAFB-B0D2-4CF8-B0F6-1B05E40E959B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA3BAFB-B0D2-4CF8-B0F6-1B05E40E959B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA3BAFB-B0D2-4CF8-B0F6-1B05E40E959B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385FEEAC-15A2-43FB-9D6F-CBE231C2E174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385FEEAC-15A2-43FB-9D6F-CBE231C2E174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385FEEAC-15A2-43FB-9D6F-CBE231C2E174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385FEEAC-15A2-43FB-9D6F-CBE231C2E174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

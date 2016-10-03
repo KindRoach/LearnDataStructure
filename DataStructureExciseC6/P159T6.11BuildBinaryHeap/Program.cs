@@ -4,34 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P134BinaryHeap
+namespace P159T6._11BuildBinaryHeap
 {
     class Program
     {
+        // 比较线性时间和N次插入算法构建堆的时间
         static void Main(string[] args)
         {
-            int size = 10;
+            var nums = GetNums(10000000);
+            nums = nums.OrderByDescending(x => x).ToArray();
+
+            var before = new DateTime();
+            var after = new DateTime();
+
+            before = DateTime.Now;
+            var heap1 = new BinaryHeap<int>(10000000, int.MinValue, nums);
+            after = DateTime.Now;
+            Console.WriteLine(after - before);
+
+            before = DateTime.Now;
+            var heap2 = BuildHeap(nums);
+            after = DateTime.Now;
+            Console.WriteLine(after - before);
+        }
+
+        static BinaryHeap<int> BuildHeap(int[] A)
+        {
+            var heap = new BinaryHeap<int>(10000000, int.MinValue);
+            foreach (var item in A)
+            {
+                heap.Insert(item);
+            }
+            return heap;
+        }
+
+        static int[] GetNums(int size)
+        {
+            var nums = new int[size];
             var random = new Random();
-            var num = new int[size];
             for (int i = 0; i < size; i++)
             {
-                num[i] = random.Next();
+                nums[i] = random.Next();
             }
-            var heap = new BinaryHeap<int>(size, Int32.MinValue, num);
-
-            Array.Sort(num);
-
-            bool isRight = true;
-            foreach (var item in num)
-            {
-                if (item != heap.RemoveMin())
-                {
-                    isRight = false;
-                }
-            }
-            Console.WriteLine(isRight);
-            return;
-
+            return nums;
         }
     }
 
