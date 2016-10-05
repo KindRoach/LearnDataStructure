@@ -18,7 +18,8 @@ namespace P212T8._10LCA_OffLine_Trajan
 
     class Program
     {
-        static List<int>[] Childs { get; set; }
+        // 顶点编号从1开始
+		static List<int>[] Childs { get; set; }
         static List<int>[] Relative { get; set; }
 
         // 储存答案顺序的列表
