@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P220ShortestPath_NoWeight",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P224FindShortestPath_Dijkstra", "P224FindShortestPath_Dijkstra\P224FindShortestPath_Dijkstra.csproj", "{2AEC0FD2-0557-4780-89F8-D0472762462D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P230CriticalPath", "P230CriticalPath\P230CriticalPath.csproj", "{8C5C6845-D8A9-4058-9173-269D67C413C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P237MinSpanningTree_Prim", "P237MinSpanningTree_Prim\P237MinSpanningTree_Prim.csproj", "{18B60944-76E7-40A0-96C6-0713FB2C53FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P237MinSpanningTree_Kruskal", "P237MinSpanningTree_Kruskal\P237MinSpanningTree_Kruskal.csproj", "{313B876D-C2B8-493E-82B0-96035597D8D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{2AEC0FD2-0557-4780-89F8-D0472762462D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEC0FD2-0557-4780-89F8-D0472762462D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEC0FD2-0557-4780-89F8-D0472762462D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C5C6845-D8A9-4058-9173-269D67C413C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C5C6845-D8A9-4058-9173-269D67C413C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C5C6845-D8A9-4058-9173-269D67C413C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C5C6845-D8A9-4058-9173-269D67C413C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18B60944-76E7-40A0-96C6-0713FB2C53FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B60944-76E7-40A0-96C6-0713FB2C53FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B60944-76E7-40A0-96C6-0713FB2C53FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B60944-76E7-40A0-96C6-0713FB2C53FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313B876D-C2B8-493E-82B0-96035597D8D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313B876D-C2B8-493E-82B0-96035597D8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313B876D-C2B8-493E-82B0-96035597D8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313B876D-C2B8-493E-82B0-96035597D8D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

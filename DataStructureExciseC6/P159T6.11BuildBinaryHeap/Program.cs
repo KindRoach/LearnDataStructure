@@ -65,6 +65,11 @@ namespace P159T6._11BuildBinaryHeap
             get { return Count == Size; }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="sentinel">哨兵：小于所有元素的值</param>
         public BinaryHeap(int size, T sentinel)
         {
             Size = size;
