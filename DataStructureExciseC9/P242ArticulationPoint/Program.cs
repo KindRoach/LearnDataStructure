@@ -58,14 +58,7 @@ namespace P242ArticulationPoint
             ans.Remove(0);
             foreach (var item in ans)
             {
-                if (item == 0)
-                {
-
-                }
-                else
-                {
-                    Console.WriteLine($"{item + 1} is Articulation Point");
-                }
+                Console.WriteLine($"{item + 1} is Articulation Point");
             }
             int child = 0;
             foreach (var path in Vertexes[0].Pathes)
