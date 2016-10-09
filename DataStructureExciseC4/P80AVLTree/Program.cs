@@ -9,9 +9,9 @@ namespace P80AVLTree
         {
             var A = new int[] { 3, 2, 1, 4, 5, 6, 7, 16, 15, 14, 13, 12, 11, 10, 8, 9 };
             var tree = new AVLTree<int>();
-            for (int i = 0; i < A.Length; i++)
+            for (int i = 0; i < 100; i++)
             {
-                tree.Insert(A[i]);
+                tree.Insert(i);
             }
 
             //tree.Delete(7);
@@ -138,8 +138,8 @@ namespace P80AVLTree
             {
                 throw new ArgumentNullException();
             }
-            //Root = Insert(Root, null, element);
-            Root = Insert(Root, element);
+            Root = Insert(Root, null, element);
+            //Root = Insert(Root, element);
         }
 
         private short GetHeight(AVLNode<T> node)
@@ -158,61 +158,6 @@ namespace P80AVLTree
                 throw new ArgumentNullException("node is null");
             }
             return (short)(Math.Max(GetHeight(node.LeftChild), GetHeight(node.RightChild)) + 1);
-        }
-
-        /// <summary>
-        /// no recursion
-        /// </summary>
-        /// <param name="root"></param>
-        /// <param name="element"></param>
-        /// <returns></returns>
-        private AVLNode<T> Insert(AVLNode<T> root, T element)
-        {
-            if (root == null)
-            {
-                root = new AVLNode<T>(element, null);
-            }
-            else
-            {
-                var p = root;
-                while (p != null)
-                {
-                    if (element.CompareTo(p.Element) < 0)
-                    {
-                        if (p.LeftChild == null)
-                        {
-                            p.LeftChild = new AVLNode<T>(element, p);
-                        }
-                        p = p.LeftChild;
-                    }
-                    else if (element.CompareTo(p.Element) > 0)
-                    {
-                        if (p.RightChild == null)
-                        {
-                            p.RightChild = new AVLNode<T>(element, p);
-                        }
-                        p = p.RightChild;
-                    }
-                    else
-                    {
-                        return root;
-                    }
-                }
-                while (Math.Abs(GetHeight(p.LeftChild) - GetHeight(p.RightChild)) != 2)
-                {
-                    p = p.Parent;
-                }
-                if (element.CompareTo(p.Element) < 0)
-                {
-                    p = LeftBlance(p);
-                }
-                else
-                {
-                    p = RightBlance(p);
-                }
-            }
-            return root;
-
         }
 
         /// <summary>
@@ -254,8 +199,11 @@ namespace P80AVLTree
             var oldRoot = root;
             var newRoot = root.LeftChild;
             newRoot.Parent = oldRoot.Parent;
+
             oldRoot.LeftChild = newRoot.RightChild;
-            newRoot.RightChild = oldRoot;
+            if (newRoot.RightChild != null) newRoot.RightChild.Parent = oldRoot;
+
+            newRoot.Parent = oldRoot.Parent;
             oldRoot.Parent = newRoot;
             oldRoot.Height = CalculateHeight(oldRoot);
             newRoot.Height = CalculateHeight(newRoot);
@@ -267,7 +215,10 @@ namespace P80AVLTree
             var oldRoot = root;
             var newRoot = root.RightChild;
             newRoot.Parent = oldRoot.Parent;
+
             oldRoot.RightChild = newRoot.LeftChild;
+            if (newRoot.LeftChild != null) newRoot.LeftChild.Parent = oldRoot;
+
             newRoot.LeftChild = oldRoot;
             oldRoot.Parent = newRoot;
             oldRoot.Height = CalculateHeight(oldRoot);
