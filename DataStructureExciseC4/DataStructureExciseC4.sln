@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P105T4.42IsomorphicBST", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P89SplayTree", "P89SplayTree\P89SplayTree.csproj", "{8724B69F-D414-4414-B722-3A6DE4635A05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P97B-Tree", "P97B-Tree\P97B-Tree.csproj", "{4C033D53-740E-43D1-AEF4-6C951DE14A22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{8724B69F-D414-4414-B722-3A6DE4635A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8724B69F-D414-4414-B722-3A6DE4635A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8724B69F-D414-4414-B722-3A6DE4635A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C033D53-740E-43D1-AEF4-6C951DE14A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C033D53-740E-43D1-AEF4-6C951DE14A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C033D53-740E-43D1-AEF4-6C951DE14A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C033D53-740E-43D1-AEF4-6C951DE14A22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

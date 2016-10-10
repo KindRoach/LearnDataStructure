@@ -243,6 +243,7 @@ namespace P89SplayTree
             var tr = p.RightChild;
             var newRoot = FindMax(tl);
             newRoot.RightChild = tr;
+            if (tr!=null) tr.Parent = newRoot;
             Root = newRoot;
         }
 
