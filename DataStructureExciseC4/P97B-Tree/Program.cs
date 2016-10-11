@@ -10,7 +10,7 @@ namespace P97B_Tree
     {
         static void Main(string[] args)
         {
-            var node = new BTreeNode<int>(1000);
+            var node = new BTreeNode<int>(1000, null);
             node.KeyNum = 1000;
             for (int i = 0; i < 1000; i++)
             {
@@ -35,18 +35,20 @@ namespace P97B_Tree
         /// </summary>
         public int Capacity { get; set; }
         public T[] Keys { get; set; }
+        public BTreeNode<T> Parent;
         public BTreeNode<T>[] Indexes { get; set; }
 
-        public BTreeNode(int capacity)
+        public BTreeNode(int capacity, BTreeNode<T> parent)
         {
             KeyNum = 0;
             Capacity = capacity;
-            Keys = new T[capacity];
+            Parent = parent;
+            Keys = new T[capacity + 1];
             Indexes = new BTreeNode<T>[capacity + 1];
         }
 
         /// <summary>
-        /// 找到小于等于的key的索引，如果key小于所有的关键字，返回-1
+        /// 找到返回index，找不到返回最后一个小于key的索引的补码，如果key小于所有的关键字，返回-2
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -54,11 +56,11 @@ namespace P97B_Tree
         {
             if (key.CompareTo(Keys[0]) < 0)
             {
-                return -1;
+                return -2;
             }
             else if (key.CompareTo(Keys[KeyNum - 1]) > 0)
             {
-                return KeyNum - 1;
+                return ~(KeyNum - 1);
             }
 
             int low = 0;
@@ -80,7 +82,17 @@ namespace P97B_Tree
                     return mid;
                 }
             }
-            return low;
+            return ~low;
+        }
+
+        public void Insert(int index, T key)
+        {
+            KeyNum++;
+            for (int i = KeyNum - 1; i >= index; i--)
+            {
+                Keys[i] = Keys[i - 1];
+            }
+            Keys[index] = key;
         }
     }
 
@@ -103,15 +115,62 @@ namespace P97B_Tree
         private T Find(BTreeNode<T> root, T key)
         {
             int index = root.FindIndex(key);
-            if (root.Keys[index].Equals(key))
+            if (index > 0)
             {
                 return root.Keys[index];
             }
             else
             {
-                return Find(root.Indexes[index + 1], key);
+                return Find(root.Indexes[~index + 1], key);
             }
-
         }
+
+        //public void Insert(T key)
+        //{
+        //    Root = Insert(Root, key, null);
+        //}
+
+        //private BTreeNode<T> Insert(BTreeNode<T> root, T key, BTreeNode<T> parent)
+        //{
+        //    if (root == null)
+        //    {
+        //        var node = new BTreeNode<T>(Order - 1, parent);
+        //        node.KeyNum++;
+        //        node.Keys[0] = key;
+        //        return root;
+        //    }
+
+        //    int index = root.FindIndex(key);
+        //    if (index > 0)      //找到了
+        //    {
+        //        return root;
+        //    }
+        //    else
+        //    {
+        //        index = ~index;   //没找到，获取第一个小于等于key的元素索引
+        //    }
+
+        //    // 没有装满
+        //    if (root.KeyNum < root.Capacity)
+        //    {
+        //        // 没有适合的子树
+        //        if (root.Indexes[index + 1] == null)
+        //        {
+        //            root.Insert(index + 1, key);
+        //        }
+        //        else
+        //        {
+        //            root.Indexes[index + 1] = Insert(root.Indexes[index + 1], key, root);
+        //        }
+        //    }
+
+        //    // 装满了，分裂
+        //    root.Insert(index + 1, key);
+        //    int mid = Order / 2;
+        //    var newRoot = new BTreeNode<T>(Order - 1);
+        //    newRoot.KeyNum = 1;
+        //    newRoot.Keys[0] =
+
+        //}
     }
 }
