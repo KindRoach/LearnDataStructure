@@ -4,20 +4,186 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P73BinarySearchTree
+namespace P106T4._45ThreadedTree
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var tree = new BSTree<int>();
-            tree.Insert(3);
-            tree.Insert(2);
-            tree.Insert(8);
-            tree.Insert(5);
-            tree.Insert(6);
-            tree.Insert(10);
-            Console.WriteLine(tree.FindKth(2).Element);
+            var bst = new BSTree<int>();
+            bst.Insert(4);
+            bst.Insert(2);
+            bst.Insert(6);
+            bst.Insert(1);
+            bst.Insert(3);
+            bst.Insert(5);
+            bst.Insert(7);
+            var ttree = new TTree<int>(bst);
+            ttree.Insert(8);
+            ttree.PrintLDR();
+        }
+    }
+
+    public class TTreeNode<T>
+        where T : IComparable
+    {
+        public T Val { get; set; }
+        public TTreeNode<T> Left { get; set; }
+        public TTreeNode<T> Right { get; set; }
+        public bool HasLeft { get; set; }
+        public bool HasRight { get; set; }
+
+        public TTreeNode(T val)
+        {
+            Val = val;
+            HasLeft = false;
+            HasRight = false;
+        }
+    }
+
+    public class TTree<T>
+        where T : IComparable
+    {
+        public TTreeNode<T> Root { get; set; }
+
+        public TTree(BSTree<T> BSTree)
+        {
+            TTreeNode<T> pre = null;
+            Root = GetTTree(BSTree.Root, ref pre);
+
+        }
+
+        private TTreeNode<T> GetTTree(BSTNode<T> BSTnode, ref TTreeNode<T> pre)
+        {
+            if (BSTnode == null)
+            {
+                return null;
+            }
+
+            var node = new TTreeNode<T>(BSTnode.Element);
+            node.Left = GetTTree(BSTnode.LeftChild, ref pre);
+            if (pre != null && !pre.HasRight)
+            {
+                pre.Right = node;
+            }
+            if (node.Left != null)
+            {
+                node.HasLeft = true;
+            }
+            else
+            {
+                node.Left = pre;
+            }
+            pre = node;
+            node.Right = GetTTree(BSTnode.RightChild, ref pre);
+            if (node.Right != null)
+            {
+                node.HasRight = true;
+            }
+            return node;
+        }
+
+        public static TTreeNode<T> GetNext(TTreeNode<T> node)
+        {
+            if (!node.HasRight)
+            {
+                return node.Right;
+            }
+            else
+            {
+                var p = node.Right;
+                if (p == null)
+                {
+                    return p;
+                }
+                while (p.HasLeft)
+                {
+                    p = p.Left;
+                }
+                return p;
+            }
+        }
+
+        public static TTreeNode<T> GetPre(TTreeNode<T> node)
+        {
+            if (!node.HasLeft)
+            {
+                return node.Left;
+            }
+            else
+            {
+                var p = node.Left;
+                if (p == null)
+                {
+                    return p;
+                }
+                while (p.HasRight)
+                {
+                    p = p.Right;
+                }
+                return p;
+            }
+        }
+
+        public void PrintLDR()
+        {
+            var p = Root;
+            if (p == null)
+            {
+                return;
+            }
+            while (p.HasLeft)
+            {
+                p = p.Left;
+            }
+            while (p != null)
+            {
+                Console.WriteLine(p.Val);
+                p = GetNext(p);
+            }
+        }
+
+        public void Insert(T val)
+        {
+            Root = Insert(Root, val);
+        }
+
+        private TTreeNode<T> Insert(TTreeNode<T> root, T val)
+        {
+            if (root == null)
+            {
+                return new TTreeNode<T>(val);
+            }
+
+            if (val.CompareTo(root.Val) < 0)
+            {
+                if (root.HasLeft)
+                {
+                    root.Left = Insert(root.Left, val);
+                }
+                else
+                {
+                    var node = new TTreeNode<T>(val);
+                    node.Left = root.Left;
+                    root.Left = node;
+                    node.Right = root;
+                }
+            }
+            else if (val.CompareTo(root.Val) > 0)
+            {
+                if (root.HasRight)
+                {
+                    root.Right = Insert(root.Right, val);
+                }
+                else
+                {
+                    var node = new TTreeNode<T>(val);
+                    node.Left = root;
+                    node.Right = root.Right;
+                    root.Right = node;
+                }
+            }
+            return root;
         }
     }
 
