@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P159T6.9PrintSmallerThanX",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P159T6.11BuildBinaryHeap", "P159T6.11BuildBinaryHeap\P159T6.11BuildBinaryHeap.csproj", "{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P152BinomialQueue", "P152BinomialQueue\P152BinomialQueue.csproj", "{0BBFA1F8-1B91-475B-B3CB-49C86CF64D7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5994E1D3-DA79-4CFD-9CB6-64D7E20DE581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBFA1F8-1B91-475B-B3CB-49C86CF64D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBFA1F8-1B91-475B-B3CB-49C86CF64D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBFA1F8-1B91-475B-B3CB-49C86CF64D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBFA1F8-1B91-475B-B3CB-49C86CF64D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
