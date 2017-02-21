@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P204_SplitSteelBar", "P204_SplitSteelBar\P204_SplitSteelBar.csproj", "{86F56595-3733-45F6-B1D0-1ECE883C7A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P211_Matrix-chainMultiplication", "P211_Matrix-chainMultiplication\P211_Matrix-chainMultiplication.csproj", "{C1432634-AF74-40C3-9AA4-47EA2F424395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P223_LongestCommonSubsequence", "P223_LongestCommonSubsequence\P223_LongestCommonSubsequence.csproj", "{AEADD7FB-AB3D-48D3-8357-39BF8163377C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P226_OptimalBinarySearchTree", "P226_OptimalBinarySearchTree\P226_OptimalBinarySearchTree.csproj", "{3FEDDDFB-3FB4-4BC3-88C4-D54F1292CE43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86F56595-3733-45F6-B1D0-1ECE883C7A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F56595-3733-45F6-B1D0-1ECE883C7A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F56595-3733-45F6-B1D0-1ECE883C7A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F56595-3733-45F6-B1D0-1ECE883C7A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1432634-AF74-40C3-9AA4-47EA2F424395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1432634-AF74-40C3-9AA4-47EA2F424395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1432634-AF74-40C3-9AA4-47EA2F424395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1432634-AF74-40C3-9AA4-47EA2F424395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEADD7FB-AB3D-48D3-8357-39BF8163377C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEADD7FB-AB3D-48D3-8357-39BF8163377C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEADD7FB-AB3D-48D3-8357-39BF8163377C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEADD7FB-AB3D-48D3-8357-39BF8163377C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FEDDDFB-3FB4-4BC3-88C4-D54F1292CE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEDDDFB-3FB4-4BC3-88C4-D54F1292CE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEDDDFB-3FB4-4BC3-88C4-D54F1292CE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FEDDDFB-3FB4-4BC3-88C4-D54F1292CE43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
